@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-import django_heroku
 from pathlib import Path
 from rest_framework.settings import api_settings
 
@@ -116,14 +115,14 @@ WSGI_APPLICATION = 'ecom_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'livedb',
-        'USER':'postgres',
-        'PASSWORD':'ecompluginapi',
-        'HOST':'database-1.ck4wpahnt8nu.us-west-2.rds.amazonaws.com',
-        'PORT':'5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'livedb',
+        # 'USER':'postgres',
+        # 'PASSWORD':'ecompluginapi',
+        # 'HOST':'database-1.ck4wpahnt8nu.us-west-2.rds.amazonaws.com',
+        # 'PORT':'5432',
     }
 }
 
@@ -174,4 +173,3 @@ REST_FRAMEWORK = {
 }
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-django_heroku.settings(locals())
